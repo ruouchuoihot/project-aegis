@@ -1,11 +1,11 @@
-# Project Aegis
+# Aegis - An Elastic Security Lab
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Elastic Stack: 8.12.0](https://img.shields.io/badge/Elastic%20Stack-8.12.0-005571?logo=elastic-stack)](https://www.elastic.co/)
 [![stability-alpha](https://img.shields.io/badge/stability-alpha-f4d03f.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#alpha)
 [![AI-Ready](https://img.shields.io/badge/AI--Ready-MCP%20Gateway-blueviolet)](https://modelcontextprotocol.io/)
 
-Project Aegis is a modern SOC and Threat Hunting lab inspired by the ideas behind [The Hunting ELK (HELK)](https://github.com/Cyb3rWard0g/HELK). HELK proved the value of an open hunting platform with Elasticsearch, Kibana, Kafka, Logstash, Spark, and Jupyter. Aegis keeps that research-lab spirit, but rebuilds the stack around Elastic 8.x, Fleet, Elastic Agent, native Detection Engine rules, Stack Monitoring, and an AI Gateway for MCP-style agent workflows.
+Project Aegis is a modern SOC and Threat Hunting lab inspired by the ideas behind [The Hunting ELK (HELK)](https://github.com/Cyb3rWard0g/HELK). Aegis keeps that open hunting-lab spirit, but rebuilds the stack around Elastic 8.x, Fleet, Elastic Agent, native Detection Engine rules, Stack Monitoring, and an AI Gateway for MCP-style agent workflows.
 
 This project is designed for security analysts, threat hunters, students, and developers who want a Docker-first home lab for log collection, attack simulation, detection engineering, and AI-assisted investigation.
 
@@ -14,7 +14,7 @@ This project is designed for security analysts, threat hunters, students, and de
 # Goals
 
 * Provide a practical open SOC and Threat Hunting lab for learning detection engineering.
-* Modernize the HELK-style lab model with Elastic 8.x security, TLS, Fleet, and Elastic Agent.
+* Provide a modern Elastic 8.x lab model with security, TLS, Fleet, and Elastic Agent.
 * Generate realistic MITRE ATT&CK mapped telemetry without needing a full victim domain.
 * Ship both native Elastic Security alerts and lab-managed Aegis alerts for repeatable exercises.
 * Expose SIEM context through an AI Gateway so LLM agents can query data, rules, and alerts safely.
@@ -61,7 +61,7 @@ make ps
 On Windows PowerShell, use Docker Compose directly:
 
 ```powershell
-cd F:\code\elk\project-aegis
+cd project-aegis
 docker compose up -d setup es01 kibana fleet-server elastic-agent
 docker compose up -d simulator ai-gateway
 docker compose ps
@@ -111,16 +111,14 @@ curl http://localhost:8000/tools/security/status
 | `.monitoring-*` | Stack Monitoring data |
 | `metrics-*` | Fleet and agent metrics |
 
-# Docs
+# Project Files
 
-* [Architecture Plan](docs/AEGIS_PLAN.md)
-* [Session History and Handover](docs/history.md)
 * [Support Payloads](config/payloads/README.md)
-* [Docs Folder](docs/README.md)
+* [Tools](tools/README.md)
+* [Configuration](config/README.md)
 
 # Resources
 
-* [The Hunting ELK (HELK)](https://github.com/Cyb3rWard0g/HELK)
 * [Elastic Stack Documentation](https://www.elastic.co/guide/index.html)
 * [Elastic Security Detection Engine](https://www.elastic.co/guide/en/security/current/rules-ui-create.html)
 * [Fleet and Elastic Agent](https://www.elastic.co/guide/en/fleet/current/fleet-overview.html)
@@ -133,10 +131,6 @@ curl http://localhost:8000/tools/security/status
 # Author
 
 * Project Aegis lab maintainer
-
-# Inspiration
-
-* Roberto Rodriguez [@Cyb3rWard0g](https://twitter.com/Cyb3rWard0g), author of [HELK](https://github.com/Cyb3rWard0g/HELK)
 
 # License: MIT
 
