@@ -16,7 +16,6 @@ logs/
 
 .idea/
 .vscode/
-.local/
 
 node_modules/
 dist/
