@@ -30,3 +30,5 @@ data/
 tmp/
 
 .agents/
+
+docs/*.md
