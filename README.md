@@ -9,7 +9,7 @@ Project Aegis is a modern SOC and Threat Hunting lab inspired by the ideas behin
 
 This project is designed for security analysts, threat hunters, students, and developers who want a Docker-first home lab for log collection, attack simulation, detection engineering, and AI-assisted investigation.
 
-![Project Aegis Infrastructure](docs/assets/AEGIS-Design.svg "Project Aegis Infrastructure")
+![Project Aegis Architecture](docs/assets/AEGIS-Architecture-v2.png "Project Aegis Architecture")
 
 # Goals
 

@@ -28,3 +28,5 @@ build/
 docker-data/
 data/
 tmp/
+
+.agents/
