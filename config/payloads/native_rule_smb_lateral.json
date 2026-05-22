@@ -1,0 +1,33 @@
+{
+  "rule_id": "aegis-smb-admin-share-lateral-movement",
+  "name": "Aegis - Outbound SMB Admin Share Activity",
+  "description": "Detects simulated lateral movement over SMB/Windows Admin Shares.",
+  "enabled": true,
+  "type": "query",
+  "language": "lucene",
+  "index": ["logs-aegis-simulation-*"],
+  "query": "event.action:smb_mapping AND destination.port:445",
+  "from": "now-5m",
+  "interval": "1m",
+  "max_signals": 1000,
+  "severity": "medium",
+  "risk_score": 65,
+  "tags": ["aegis", "simulation", "mitre:T1021.002"],
+  "threat": [
+    {
+      "framework": "MITRE ATT&CK",
+      "tactic": {
+        "id": "TA0008",
+        "name": "Lateral Movement",
+        "reference": "https://attack.mitre.org/tactics/TA0008/"
+      },
+      "technique": [
+        {
+          "id": "T1021.002",
+          "name": "Remote Services: SMB/Windows Admin Shares",
+          "reference": "https://attack.mitre.org/techniques/T1021/002/"
+        }
+      ]
+    }
+  ]
+}

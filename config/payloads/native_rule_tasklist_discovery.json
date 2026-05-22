@@ -1,0 +1,33 @@
+{
+  "rule_id": "aegis-process-discovery-tasklist",
+  "name": "Aegis - Process Discovery with tasklist",
+  "description": "Detects simulated process discovery using tasklist.exe.",
+  "enabled": true,
+  "type": "query",
+  "language": "lucene",
+  "index": ["logs-aegis-simulation-*"],
+  "query": "process.name:\"tasklist.exe\" AND process.command_line:\"tasklist /v\"",
+  "from": "now-5m",
+  "interval": "1m",
+  "max_signals": 1000,
+  "severity": "low",
+  "risk_score": 35,
+  "tags": ["aegis", "simulation", "mitre:T1057"],
+  "threat": [
+    {
+      "framework": "MITRE ATT&CK",
+      "tactic": {
+        "id": "TA0007",
+        "name": "Discovery",
+        "reference": "https://attack.mitre.org/tactics/TA0007/"
+      },
+      "technique": [
+        {
+          "id": "T1057",
+          "name": "Process Discovery",
+          "reference": "https://attack.mitre.org/techniques/T1057/"
+        }
+      ]
+    }
+  ]
+}

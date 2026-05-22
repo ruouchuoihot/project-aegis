@@ -1,0 +1,33 @@
+{
+  "rule_id": "aegis-cron-persistence",
+  "name": "Aegis - Cron Persistence via Hidden Script",
+  "description": "Detects simulated Linux persistence through a recurring cron entry.",
+  "enabled": true,
+  "type": "query",
+  "language": "lucene",
+  "index": ["logs-aegis-simulation-*"],
+  "query": "process.name:crontab AND process.command_line:*hidden_script*",
+  "from": "now-5m",
+  "interval": "1m",
+  "max_signals": 1000,
+  "severity": "medium",
+  "risk_score": 60,
+  "tags": ["aegis", "simulation", "mitre:T1053.005"],
+  "threat": [
+    {
+      "framework": "MITRE ATT&CK",
+      "tactic": {
+        "id": "TA0003",
+        "name": "Persistence",
+        "reference": "https://attack.mitre.org/tactics/TA0003/"
+      },
+      "technique": [
+        {
+          "id": "T1053.005",
+          "name": "Scheduled Task/Job: Cron",
+          "reference": "https://attack.mitre.org/techniques/T1053/005/"
+        }
+      ]
+    }
+  ]
+}

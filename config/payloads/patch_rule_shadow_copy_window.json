@@ -1,0 +1,5 @@
+{
+  "rule_id": "aegis-ransomware-shadow-copy-deletion",
+  "from": "now-5m",
+  "max_signals": 1000
+}

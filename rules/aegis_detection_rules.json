@@ -1,0 +1,58 @@
+[
+  {
+    "id": "aegis-ransomware-shadow-copy-deletion",
+    "name": "Shadow Copy Deletion via vssadmin",
+    "description": "Detects simulated ransomware precursor activity that deletes Windows shadow copies.",
+    "severity": "high",
+    "risk_score": 85,
+    "index": "logs-aegis-simulation-*",
+    "query": "process.name:\"vssadmin.exe\" AND process.command_line:*delete* AND process.command_line:*shadows*",
+    "mitre": {
+      "tactic": "Impact",
+      "technique_id": "T1490",
+      "technique_name": "Inhibit System Recovery"
+    }
+  },
+  {
+    "id": "aegis-smb-admin-share-lateral-movement",
+    "name": "Outbound SMB Admin Share Activity",
+    "description": "Detects simulated lateral movement over SMB/Windows Admin Shares.",
+    "severity": "medium",
+    "risk_score": 65,
+    "index": "logs-aegis-simulation-*",
+    "query": "event.action:smb_mapping AND destination.port:445",
+    "mitre": {
+      "tactic": "Lateral Movement",
+      "technique_id": "T1021.002",
+      "technique_name": "Remote Services: SMB/Windows Admin Shares"
+    }
+  },
+  {
+    "id": "aegis-cron-persistence",
+    "name": "Cron Persistence via Hidden Script",
+    "description": "Detects simulated Linux persistence through a recurring cron entry.",
+    "severity": "medium",
+    "risk_score": 60,
+    "index": "logs-aegis-simulation-*",
+    "query": "process.name:crontab AND process.command_line:*hidden_script*",
+    "mitre": {
+      "tactic": "Persistence",
+      "technique_id": "T1053.005",
+      "technique_name": "Scheduled Task/Job: Scheduled Task"
+    }
+  },
+  {
+    "id": "aegis-process-discovery-tasklist",
+    "name": "Process Discovery with tasklist",
+    "description": "Detects simulated process discovery using tasklist.exe.",
+    "severity": "low",
+    "risk_score": 35,
+    "index": "logs-aegis-simulation-*",
+    "query": "process.name:\"tasklist.exe\" AND process.command_line:\"tasklist /v\"",
+    "mitre": {
+      "tactic": "Discovery",
+      "technique_id": "T1057",
+      "technique_name": "Process Discovery"
+    }
+  }
+]

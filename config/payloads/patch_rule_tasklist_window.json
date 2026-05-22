@@ -1,0 +1,5 @@
+{
+  "rule_id": "aegis-process-discovery-tasklist",
+  "from": "now-5m",
+  "max_signals": 1000
+}

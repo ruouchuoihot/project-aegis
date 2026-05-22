@@ -1,0 +1,1 @@
+{"name": "Fleet Server Policy", "id": "fleet-server-policy", "namespace": "default", "monitoring_enabled": ["logs", "metrics"]}

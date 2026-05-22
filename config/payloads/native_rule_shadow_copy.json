@@ -1,0 +1,33 @@
+{
+  "rule_id": "aegis-ransomware-shadow-copy-deletion",
+  "name": "Aegis - Shadow Copy Deletion via vssadmin",
+  "description": "Detects simulated ransomware precursor activity that deletes Windows shadow copies.",
+  "enabled": true,
+  "type": "query",
+  "language": "lucene",
+  "index": ["logs-aegis-simulation-*"],
+  "query": "process.name:\"vssadmin.exe\" AND process.command_line:*delete* AND process.command_line:*shadows*",
+  "from": "now-5m",
+  "interval": "1m",
+  "max_signals": 1000,
+  "severity": "high",
+  "risk_score": 85,
+  "tags": ["aegis", "simulation", "mitre:T1490"],
+  "threat": [
+    {
+      "framework": "MITRE ATT&CK",
+      "tactic": {
+        "id": "TA0040",
+        "name": "Impact",
+        "reference": "https://attack.mitre.org/tactics/TA0040/"
+      },
+      "technique": [
+        {
+          "id": "T1490",
+          "name": "Inhibit System Recovery",
+          "reference": "https://attack.mitre.org/techniques/T1490/"
+        }
+      ]
+    }
+  ]
+}

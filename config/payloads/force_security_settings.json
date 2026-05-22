@@ -1,0 +1,4 @@
+{"changes": {
+  "securitySolution:defaultIndex": ["logs-*", "logs-aegis-simulation-*"],
+  "securitySolution:defaultDataView": "logs-*"
+}}

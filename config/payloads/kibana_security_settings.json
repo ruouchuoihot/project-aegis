@@ -1,0 +1,4 @@
+{"changes": {
+  "securitySolution:defaultIndex": ["apm-*-transaction*", "auditbeat-*", "endgame-*", "filebeat-*", "logs-*", "packetbeat-*", "winlogbeat-*", "logs-aegis-simulation-*"],
+  "securitySolution:defaultDataView": "logs-*"
+}}

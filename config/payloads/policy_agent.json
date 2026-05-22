@@ -1,0 +1,1 @@
+{"name": "Aegis Agent Policy", "id": "aegis-agent-policy", "namespace": "default", "monitoring_enabled": ["logs", "metrics"]}

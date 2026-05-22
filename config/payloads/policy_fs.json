@@ -1,0 +1,1 @@
+{"name": "Aegis Fleet Server Policy", "id": "aegis-fleet-server", "namespace": "default", "monitoring_enabled": ["logs", "metrics"], "has_fleet_server": true}
